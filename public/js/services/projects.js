@@ -34,7 +34,7 @@ app.factory('projectFactory',function ($http) {
   };
 
   projectService.addSubmission = function(Projectid, submissionText, project) {
-    var url = "/projects/" + Projectid + "/applicantsubmission/";
+    var url = "/projects/" + Projectid + "/submission/";
     var submission = {text: submissionText};
     $http.post(url, submission).then(function (res) {
         console.log(res);  
