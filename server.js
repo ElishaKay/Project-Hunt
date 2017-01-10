@@ -6,8 +6,8 @@ mongoose.Promise = global.Promise;
 
 mongoose.connect('mongodb://localhost/projects');
 
-var Beer = require("./models/EmployerProjectModel");
-var Review= require('./models/ApplicantProjectModel');
+var Project = require("./models/EmployerProjectModel");
+var Submission = require('./models/ApplicantProjectModel');
 
 var app = express();
 
@@ -66,7 +66,7 @@ app.delete('/projects/:id', function (req, res) {
 });
 
 
-app.post('/projects/:id/applicantsubmission/', function(req, res, next) {
+app.post('/projects/:id/submission/', function(req, res, next) {
 
   Project.findById(req.params.id, function(err, foundProject) {
     //foundProject is the success function of the project we found in the db
