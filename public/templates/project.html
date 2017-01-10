@@ -1,0 +1,22 @@
+<div class="page-header">
+  <a href="/#/home">back</a>
+
+  <div>
+    <h3>
+      <span>{{project.name}}</span>
+      <span>{{project.submission}}
+      <img class="image-project" src="{{project.image}}">
+
+      <hr>
+        <h4>Submissions</h4>
+          <div ng-repeat="submission in project.submissions">
+            <h4>{{submission.name}}</h4>
+            <p>{{submission.text}}</p>
+      </div>
+      </hr>
+
+    <input type="text" placeholder="Submit Project" ng-model="submissionText">
+    <button class="btn btn-primary" ng-click="addSubmission()">Submit</button>
+    </h3>
+  </div>
+</div>

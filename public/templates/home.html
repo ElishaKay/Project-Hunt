@@ -1,0 +1,51 @@
+
+      
+<div ng-repeat='list in projectArray track by $index'>
+  <div class="panel panel-default">
+  
+    <a class="panel-heading" ui-sref='project({id: list._id})'>Name: {{list.name}}</a>
+    <div class="panel-body">
+      Description: {{list.description}}
+    </div>
+    <div>
+    Company: <img class="image-project" ng-src="{{list.image}}">
+    </div>
+
+    <button ng-click='removeProject($index)'>
+      <i class="fa fa-trash" aria-hidden="true"></i>
+    </button>
+
+  </div>
+</div>
+
+
+    
+
+
+
+      <div class="page-header">
+      </div>
+
+      <!-- render projects here -->
+
+      <form ng-submit="addProject()">
+        <h3>Add a new project</h3>
+
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Project Name" ng-model="name"></input>
+        </div>
+
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Add Description" ng-model="description"></input>
+        </div>
+
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Image URL" ng-model="image"></input>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Post</button>
+      </form>
+    </div>
+  </div>
+
+
